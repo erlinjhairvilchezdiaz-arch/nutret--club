@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acceso staff · Nutreté Protein Club</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <strong>Nutreté</strong>
+      <span>Protein Club</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Mi tarjeta</a>
+      <a href="carta.html">Carta y precios</a>
+    </nav>
+  </div>
+</header>
+
+<div id="login-box" class="admin-panel">
+  <h1>Acceso staff</h1>
+  <p class="sub">Inicia sesión para agregar sellos</p>
+
+  <form id="login-form" class="stack">
+    <div class="field">
+      <label for="login-email">Correo</label>
+      <input id="login-email" type="email" required autocomplete="username">
+    </div>
+    <div class="field">
+      <label for="login-pass">Contraseña</label>
+      <input id="login-pass" type="password" required autocomplete="current-password">
+    </div>
+    <button type="submit" class="btn block">Ingresar</button>
+    <p id="login-error" class="error-text"></p>
+  </form>
+</div>
+
+<div id="panel-box" class="admin-panel" style="display:none;">
+  <h1>Buscar cliente</h1>
+  <p class="sub">Ingresa el número de celular del cliente</p>
+
+  <form id="search-form" class="row">
+    <input id="search-input" type="tel" inputmode="numeric" placeholder="Número de celular" required style="flex:1;border:2px solid var(--line);border-radius:10px;padding:11px 14px;font-size:0.95rem;">
+    <button type="submit" class="btn">Buscar</button>
+  </form>
+
+  <div id="cliente-card" class="cliente-card">
+    <div class="row-data"><span>Nombre</span><strong id="data-nombre">—</strong></div>
+    <div class="row-data"><span>Celular</span><strong id="data-telefono">—</strong></div>
+    <div class="row-data"><span>Sellos</span><strong id="data-sellos">—</strong></div>
+    <div class="row-data"><span>Premios disponibles</span><strong id="data-premios">—</strong></div>
+
+    <div class="row" style="margin-top:14px;">
+      <button id="btn-agregar-sello" type="button" class="btn block">+ Agregar sello</button>
+      <button id="btn-canjear" type="button" class="btn ghost block" disabled>Canjear premio</button>
+    </div>
+  </div>
+
+  <div id="cliente-no-existe" class="not-found" style="margin-top:16px;">
+    <strong>Ese número no está registrado.</strong>
+    <p>Crea su tarjeta:</p>
+    <form id="crear-form" class="row">
+      <input id="nombre-nuevo" type="text" placeholder="Nombre (opcional)" style="flex:1;border:2px solid var(--line);border-radius:10px;padding:11px 14px;font-size:0.95rem;">
+      <button type="submit" class="btn gold">Crear</button>
+    </form>
+  </div>
+
+  <hr class="divider">
+  <button id="logout-btn" class="logout-link">Cerrar sesión</button>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
