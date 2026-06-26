@@ -8,12 +8,12 @@
    ========================================================= */
 
 const firebaseConfig = {
-  apiKey: "TU_API_KEY",
-  authDomain: "TU_PROYECTO.firebaseapp.com",
-  projectId: "TU_PROYECTO",
-  storageBucket: "TU_PROYECTO.appspot.com",
-  messagingSenderId: "TU_SENDER_ID",
-  appId: "TU_APP_ID"
+  apiKey: "AIzaSyBKvi144N5PUILNrBMUhJNiTvhF0qAobcM",
+  authDomain: "nutrete-club.firebaseapp.com",
+  projectId: "nutrete-club",
+  storageBucket: "nutrete-club.firebasestorage.app",
+  messagingSenderId: "252240040705",
+  appId: "1:252240040705:web:916895a6b5367070b38100",
 };
 
 firebase.initializeApp(firebaseConfig);
